@@ -70,7 +70,7 @@ def fit_SFA(train_X, alpha):
     # Determine the value of M
     Omega = np.diag(omega)
     derive_X = train_X[1:, :] - train_X[:-1, :]
-    tmp = (derive_X @ derive_X.T) / (N - 2)
+    tmp = (derive_X.T @ derive_X) / (N - 2)
     var_X = np.zeros((m, 1))
     for i in range(m):
         var_X[i] = tmp[i, i]
